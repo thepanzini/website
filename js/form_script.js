@@ -10,7 +10,7 @@
 	$.fn.initForm = function (options) {
 		var settings = $.extend({
 			type: 'post',
-			serverUrl: '#',
+			serverUrl: 'https://formspree.io/the.panzini@gmail.com',
 			successClean: this.find('.form-success-clean'),
 			successGone: this.find('.form-success-gone'),
 			successInvisible: this.find('.form-success-invisible'),
@@ -35,12 +35,12 @@
 						 * external URL such as:  url: 'http://www.example.com/avenir/ajaxserver/server.php'
 						 * depending to your requirements
 						 */
-						url: settings.serverUrl,
-						type: settings.type,
-						data: form_data,
-						dataType: 'json',
+						// url: settings.serverUrl,
+						// type: settings.type,
+						// 		data: form_data,
+						// 		dataType: 'json',
 
-						/* CALLBACK FOR SENDING EMAIL GOEAS HERE */
+						// 		/* CALLBACK FOR SENDING EMAIL GOEAS HERE */
 						success: function (data) {
 							//Ajax connexion was a success, now handle response
 							if (data && !data.error) {
@@ -53,24 +53,24 @@
 								console.log('Request sent successfully');
 							}
 							// Else the login credentials were invalid.
-							else {
-								//Ajax connexion reject an error a success, now handle response
-								settings.textFeedback.removeClass('gone');
-								settings.textFeedback.removeClass('invisible');
-								settings.textFeedback.html('Error when sending request.');
-								console.log('Could not process AJAX request to server');
-							}
-						},
-						/* show error message */
-						error: function (jqXHR, textStatus, errorThrown) {
-							//ajax error
-							settings.textFeedback.removeClass('gone');
-							settings.textFeedback.removeClass('invisible');
-							settings.textFeedback.html('Error when sending request.');
-							console.log('ajax error');
+							// 			else {
+							// 				//Ajax connexion reject an error a success, now handle response
+							// 				settings.textFeedback.removeClass('gone');
+							// 				settings.textFeedback.removeClass('invisible');
+							// 				settings.textFeedback.html('Error when sending request.');
+							// 				console.log('Could not process AJAX request to server');
+							// 			}
+							// 		},
+							// 		/* show error message */
+							// 		error: function (jqXHR, textStatus, errorThrown) {
+							// 			//ajax error
+							// 			settings.textFeedback.removeClass('gone');
+							// 			settings.textFeedback.removeClass('invisible');
+							// 			settings.textFeedback.html('Error when sending request.');
+							// 			console.log('ajax error');
 
 						}
-						/* END EMAIL SENDING CALLBACK */
+						// 		/* END EMAIL SENDING CALLBACK */
 					});
 			}
 
@@ -101,13 +101,25 @@
 			// use jquery validator plugin if it is enabled
 			if (jQuery.validator) {
 				if ($(this).valid()) {
-					$ajax.sendRequest(this);
+					// $ajax.sendRequest(this);
+					document.forms["message_form"].submit();
 				}
 			}
 			else {
-				$ajax.sendRequest(this);
+				// $ajax.sendRequest(this);
+				document.forms["message_form"].submit();
 			}
+
 		});
+
+		const urlParams = new URLSearchParams(window.location.search);
+		const myParam = urlParams.get('email');
+
+		if (myParam == "thankyou") {
+
+			$ajax.sendRequest(this)
+
+		}
 
 	};
 
