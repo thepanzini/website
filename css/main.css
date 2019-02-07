@@ -5630,3 +5630,22 @@ p {
 /* ipad and tablet */
 /* ipad and tablet */
 /* phone */
+
+.project-title{
+  padding-left: 20px;
+  padding-right: 20px;
+  width: 90%; 
+}
+
+.project-title h3{
+  font-size: 3.5rem;
+  font-weight: bold;
+  font-family: "Bebas Neue", "Ostrich Sans", "Oswald", sans-serif;
+  letter-spacing: 0.2em;
+  }
+
+.project-title p {
+  padding-left: 20px;
+  padding-right: 20px;
+  width: 90%; 
+  }

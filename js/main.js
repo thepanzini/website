@@ -44,7 +44,7 @@ $(document).on('ready', function () {
 		divBlock.setAttribute("class", "img");
 		divBlock.style.backgroundImage = "url('" + src + "')";
 		divBlock.style.backgroundRepeat = "no-repeat";
-		divBlock.style.backgroundPosition = "center";
+		divBlock.style.backgroundPosition = "left";
 		divBlock.style.backgroundSize = "cover";
 		$(listImgBlock[i]).after(divBlock);
 		listImgBlock[i].style.display = "none";
@@ -73,7 +73,7 @@ $(document).on('ready', function () {
 	var menuItems = $('.all-menu-wrapper .nav-link');
 	var menuIcon = $('.menu-icon, #navMenuIcon');
 	var menuBlock = $('.all-menu-wrapper');
-	var reactToMenu = $ ('.page-main, .navbar-sidebar, .page-cover')
+	var reactToMenu = $('.page-main, .navbar-sidebar, .page-cover')
 	var menuLinks = $(".navbar-mainmenu a, .navbar-sidebar a");
 	// Menu icon clicked
 	menuIcon.on('click', function () {
@@ -94,7 +94,7 @@ $(document).on('ready', function () {
 	});
 
 	// 4 Carousel Slider
-	
+
 	// 4.a carousel-alpha demo
 	$('.carousel-slick-alpha-demo').slick({
 		dots: true
@@ -152,7 +152,7 @@ $(document).on('ready', function () {
 			}
 		}
 	});
-	
+
 	// 4.1 Slideshow slider
 	var imageList = $('.slide-show .img');
 	var imageSlides = [];
@@ -166,7 +166,7 @@ $(document).on('ready', function () {
 		slides: imageSlides,
 		animation: ['kenburnsUp', 'kenburnsDown', 'kenburnsLeft', 'kenburnsRight']
 	});
-	
+
 	// 5. Init video background
 	var videoBg = $('.video-container video, .video-container object');
 
@@ -242,7 +242,7 @@ $(document).on('ready', function () {
 					}
 
 					// init sliders
-					
+
 					// carousel-alpha : team about us
 					new Swiper('.carousel-swiper-alpha-demo .swiper-container', {
 						pagination: '.carousel-swiper-alpha-demo .items-pagination',
@@ -265,7 +265,7 @@ $(document).on('ready', function () {
 						}
 					});
 
-					
+
 					// Fix video background
 					videoBg.maximage('maxcover');
 
@@ -321,7 +321,7 @@ $(document).on('ready', function () {
 				afterLoad: function (anchorLink, index) {
 					// Behavior after a full page is loaded
 					var pageCover = $('.page-cover');
-					if (index > 1 ){
+					if (index > 1) {
 						if (!pageCover.hasClass('scrolled')) {
 							pageCover.addClass('scrolled');
 						}
@@ -331,7 +331,7 @@ $(document).on('ready', function () {
 						if (!siteFooter.hasClass('fp-scrolled')) {
 							siteFooter.addClass('fp-scrolled');
 						}
-					}  else {
+					} else {
 						pageCover.removeClass('scrolled');
 						siteHeader.removeClass('fp-scrolled');
 						siteFooter.removeClass('fp-scrolled');
@@ -340,7 +340,7 @@ $(document).on('ready', function () {
 					if (!activeSection.hasClass('section-anim')) {
 						// uncomment below for onetime animation
 						activeSection.addClass('section-anim');
-					} 
+					}
 					// hide or show clock
 					if ($('.section.active').hasClass('hide-clock')) {
 						headerContainer.addClass('gone');
@@ -377,7 +377,7 @@ $(document).on('ready', function () {
 					$.fn.fullpage.reBuild();
 				},
 				afterLoad: function () {
-					
+
 				},
 				onLeave: function (index, nextIndex, direction) {
 					// Behavior when a full page is leaved
@@ -443,7 +443,7 @@ $(document).on('ready', function () {
 
 	// 10. cursor position
 	var shadowBall = $(".cursor-ball");
-	$(".body-page").mousemove(function(e) {
+	$(".body-page").mousemove(function (e) {
 		shadowBall.css("transform", "translateX(" + e.pageX + "px)");
 		// shadowBall.css("transform", "translate(" + e.pageX + "px," + e.pageY +"px)");
 		// shadowBall.posx.value = e.pageX;
